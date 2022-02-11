@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Welcome To A Game of Tic-Tac-Toe!</h1>
+
+<!-- Before you even start working with JavaScript, construct the gameboard. 
+The gameboard page should include the 3x3 grid (of divs), and at minimum a reset button. 
+Using id and/or class on clickable elements will help you wire this up in JavaScript afterwards. -->
+
+
+<!-- Create a div for the gameboard -->
+
+<div id='container'>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div> 
+</div>
+
+<!-- display message indicating who turn is it  -->
+
+<p id ='turnMessage'>f</p>
+
+
+
+<!-- generate button that will reset the game -->
+<button id='resetTheGame'>Ok, new game!</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+<!-- A user should be able to click on different squares to make a move.
+Every click will alternate between marking an X and O
+Upon marking of an individual cell, use JavaScript to add an X or O to the cell, according to whose turn it is.
+A cell should not be able to be replayed once marked.
+You should not be able to click remaining empty cells after the game is over.
+Add a reset button that will clear the contents of the board.
+Display a message to indicate which turn is about to be played.
+Detect draw conditions (ties/cat's game)
+Detect winner: Stop game and declare the winner if one player ends up getting three in a row.
+Hint: Determine a set of winning combinations. Check those combinations on the board contents after every move. -->
