@@ -18,22 +18,24 @@ Using id and/or class on clickable elements will help you wire this up in JavaSc
 <!-- Create a div for the gameboard -->
 
 <div id='container'>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div> 
+        <div id="grid"></div>
+        <div id="grid"></div>
+        <div id="grid"></div>
+        <div id="grid"></div>
+        <div id="grid"></div>
+        <div id="grid"></div>
+        <div id="grid"></div>
+        <div id="grid"></div>
+        <div id="grid"></div> 
 </div>
 
 <!-- display message indicating who turn is it  -->
 
 <p id ='turnMessage'>f</p>
 
+<!-- display message indicating who has won the game -->
 
+<div class="results"></div>
 
 <!-- generate button that will reset the game -->
 <button id='resetTheGame'>Ok, new game!</button>
