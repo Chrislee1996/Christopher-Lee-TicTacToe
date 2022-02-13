@@ -35,7 +35,7 @@ const gridClicked = (event) => {
        turnMessage.innerText= `Player 2 has played X! It is now player's 1 turn`
     } 
     checkWin()
-
+    
 }   
 // create func to check for wins (Total opposite of DRY coding I'm sorry )
 const checkWin = () => {
