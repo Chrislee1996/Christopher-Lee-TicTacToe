@@ -16,7 +16,7 @@ Using id and/or class on clickable elements will help you wire this up in JavaSc
 
 
 <!-- Create a div for the gameboard -->
-<button onClick ='window.location.reload();' id='resetTheGame'>Ok, new game!</button>
+
 <div id='container'>
         <div class ='grid' id="0"></div>
         <div class ='grid' id="1"></div>
@@ -33,6 +33,8 @@ Using id and/or class on clickable elements will help you wire this up in JavaSc
         </div>
         <div>
         <div id ='result'></div>
+        <div id ='tieGame'></div>
+        <button onClick ='window.location.reload();' id='resetTheGame'>Ok, new game!</button>
         </div>
 </div>
 <!-- display message indicating who turn is it  -->
@@ -52,4 +54,4 @@ Add a reset button that will clear the contents of the board.
 Display a message to indicate which turn is about to be played.
 Detect draw conditions (ties/cat's game)
 Detect winner: Stop game and declare the winner if one player ends up getting three in a row.
-Hint: Determine a set of winning combinations. Check those combinations on the board contents after every move. -->
+Hint: Determine a set of winning combinations. Check those combinations on the board contents after every move. -->-

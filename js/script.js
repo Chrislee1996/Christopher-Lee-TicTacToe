@@ -13,6 +13,7 @@ const result = document.querySelector('#result')
 const grid = document.querySelectorAll('.grid')
 
 
+
 //create event listener that will display "something" when clicked
 const gridClicked = (event) => {  
     //add something to our grid via click
@@ -22,7 +23,6 @@ const gridClicked = (event) => {
         //if clicked, need to display 'something'
         //switch to player2 after click
         //repeat and then switchn back to player1
-    
      if (firstTurn === playerOne) {
         grid.innerText=playerOne
        gameBoard == playerOne
@@ -35,38 +35,60 @@ const gridClicked = (event) => {
        turnMessage.innerText= `Player 2 has played X! It is now player's 1 turn`
     } 
     checkWin()
-}   
 
-//create func to check for wins 
+}   
+// create func to check for wins (Total opposite of DRY coding I'm sorry )
 const checkWin = () => {
-    if      (grid[0].innerText === "O" && grid[1].innerText === "O" &&  grid[2].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if (grid[3].innerText === "O" && grid[4].innerText === "O" && grid[5].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if (grid[6].innerText === "O" && grid[7].innerText === "O" && grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if (grid[0].innerText === "O"&& grid[3].innerText === "O" && grid[6].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if (grid[1].innerText === "O" && grid[4].innerText === "O" &&  grid[7].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if (grid[2].innerText === "O"  &&  grid[5].innerText === "O" &&grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if (grid[0].innerText === "O" && grid[4].innerText === "O" &&  grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if (grid[2].innerText === "O" && grid[4].innerText === "O" &&grid[6].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
-    else if  (grid[0].innerText === "X" &&grid[1].innerText === "X" && grid[2].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
-    else if (grid[3].innerText === "X" && grid[4].innerText === "X" && grid[5].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
-    else if (grid[6].innerText === "X" && grid[7].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
-    else if (grid[0].innerText === "X" && grid[3].innerText === "X" && grid[6].innerText === "X"){ document.getElementById('result').innerText = 'Player 2 wins'}
-    else if (grid[1].innerText === "X" && grid[4].innerText === "X" && grid[7].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
-    else if (grid[2].innerText === "X" && grid[5].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
-    else if (grid[0].innerText === "X" && grid[4].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
-    else if (grid[2].innerText === "X" && grid[4].innerText === "X" &&grid[6].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
-    if (result.innerText ==='Player 2 wins' || result.innerText === 'Player 1 wins') {
-        for (let i = grid.length-1; i > 0; i--) 
-            grid[i].removeEventListener('click', gridClicked)
-            turnMessage.innerText =''
+        if      (grid[0].innerText === "O" && grid[1].innerText === "O" &&  grid[2].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if (grid[3].innerText === "O" && grid[4].innerText === "O" && grid[5].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if (grid[6].innerText === "O" && grid[7].innerText === "O" && grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if (grid[0].innerText === "O"&& grid[3].innerText === "O" && grid[6].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if (grid[1].innerText === "O" && grid[4].innerText === "O" &&  grid[7].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if (grid[2].innerText === "O"  &&  grid[5].innerText === "O" &&grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if (grid[0].innerText === "O" && grid[4].innerText === "O" &&  grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if (grid[2].innerText === "O" && grid[4].innerText === "O" &&grid[6].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+        else if  (grid[0].innerText === "X" &&grid[1].innerText === "X" && grid[2].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+        else if (grid[3].innerText === "X" && grid[4].innerText === "X" && grid[5].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+        else if (grid[6].innerText === "X" && grid[7].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+        else if (grid[0].innerText === "X" && grid[3].innerText === "X" && grid[6].innerText === "X"){ document.getElementById('result').innerText = 'Player 2 wins'}
+        else if (grid[1].innerText === "X" && grid[4].innerText === "X" && grid[7].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+        else if (grid[2].innerText === "X" && grid[5].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+        else if (grid[0].innerText === "X" && grid[4].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+        else if (grid[2].innerText === "X" && grid[4].innerText === "X" &&grid[6].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+        if (result.innerText ==='Player 2 wins' || result.innerText === 'Player 1 wins') {
+            for (let i = grid.length-1; i > 0; i--) 
+                grid[i].removeEventListener('click', gridClicked)
+                turnMessage.innerText =''
+    }
+    if(checkDraw()) {
+        result.innerText = `It's a tie`
+        turnMessage.innerText =''
+    }
 }
+
+//need to check for tie
+//check if grids have innertext 
+//if no innertext- continue 
+//if innertext - tie
+
+const checkDraw = () => {
+    let drawGame = false
+    for (let i =0; i< grid.length;i++) {
+        if (grid[i].innerText !== '') {
+            continue 
+         } else {
+             return drawGame 
+        }
+    }
+    return !drawGame
 }
-    
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    //create event listener that for grid clicks 
-const gridElements = document.querySelectorAll('.grid').forEach(grid => grid.addEventListener('click', gridClicked, {once:true}))  
+        //create event listener that for grid clicks 
+    const gridElements = document.querySelectorAll('.grid').forEach(grid => grid.addEventListener('click', gridClicked, {once:true}))  
 })
+
 
 
 //need to create player variables
