@@ -73,7 +73,7 @@ const checkWin = () => {
 
 const checkDraw = () => {
     let drawGame = false
-    for (let i =0; i< grid.length;i++) {
+    for (let i =0; i <= grid.length;i++) {
         if (grid[i].innerText !== '') {
             continue 
          } else {
