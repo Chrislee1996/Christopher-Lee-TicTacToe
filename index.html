@@ -16,30 +16,27 @@ Using id and/or class on clickable elements will help you wire this up in JavaSc
 
 
 <!-- Create a div for the gameboard -->
-
+<button onClick ='window.location.reload();' id='resetTheGame'>Ok, new game!</button>
 <div id='container'>
-        <div id="grid"></div>
-        <div id="grid"></div>
-        <div id="grid"></div>
-        <div id="grid"></div>
-        <div id="grid"></div>
-        <div id="grid"></div>
-        <div id="grid"></div>
-        <div id="grid"></div>
-        <div id="grid"></div> 
+        <div class ='grid' id="0"></div>
+        <div class ='grid' id="1"></div>
+        <div class ='grid' id="2"></div>
+        <div class ='grid' id="3"></div>
+        <div class ='grid' id="4"></div>
+        <div class ='grid' id="5"></div>
+        <div class ='grid' id="6"></div>
+        <div class ='grid' id="7"></div>
+        <div class ='grid' id="8"></div> 
+        
+        <div>
+            <div id ='turnMessage'>Player 1 please make your move</p>
+        </div>
+        <div>
+        <div id ='result'>asdf</div>
+        </div>
 </div>
-
 <!-- display message indicating who turn is it  -->
-
-<p id ='turnMessage'>f</p>
-
-<!-- display message indicating who has won the game -->
-
-<div class="results"></div>
-
 <!-- generate button that will reset the game -->
-<button id='resetTheGame'>Ok, new game!</button>
-
     <script src="js/script.js"></script>
 </body>
 </html>
