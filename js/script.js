@@ -6,19 +6,12 @@ const gameBoard = [["", "", "",
 "", "", ""
 ]]
 
-const winningBoard= [[0, 1, 2],
-[3, 4, 5],
-[6, 7, 8],
-[0, 3, 6], 
-[1, 4, 7],
-[2, 5, 8],
-[0, 4, 8],
-[2, 4, 6]]
 const board = document.querySelector('#container')
 const turnMessage = document.querySelector('#turnMessage')
 const resetTheGame = document.querySelector('#resetTheGame')
 const result = document.querySelector('#result')
-let gameOver = false
+const grid = document.querySelectorAll('.grid')
+
 
 //create event listener that will display "something" when clicked
 const gridClicked = (event) => {  
@@ -29,6 +22,7 @@ const gridClicked = (event) => {
         //if clicked, need to display 'something'
         //switch to player2 after click
         //repeat and then switchn back to player1
+    
      if (firstTurn === playerOne) {
         grid.innerText=playerOne
        gameBoard == playerOne
@@ -40,24 +34,39 @@ const gridClicked = (event) => {
        firstTurn = playerOne
        turnMessage.innerText= `Player 2 has played X! It is now player's 1 turn`
     } 
-    let gameWon = checkWin()
-
-}
+    checkWin()
+}   
 
 //create func to check for wins 
-const checkWin = () =>{
-for (let i =0; i <winningBoard.length;i++) {
-    if (winningBoard[i][0] == winningBoard[i][1] && winningBoard[i][0] == winningBoard[i][2] && winningBoard[i][2] ==winningBoard[i][3] && winningBoard[i][0] !== '')
-    document.getElementById('result').innerText='winner'
+const checkWin = () => {
+    if      (grid[0].innerText === "O" && grid[1].innerText === "O" &&  grid[2].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if (grid[3].innerText === "O" && grid[4].innerText === "O" && grid[5].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if (grid[6].innerText === "O" && grid[7].innerText === "O" && grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if (grid[0].innerText === "O"&& grid[3].innerText === "O" && grid[6].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if (grid[1].innerText === "O" && grid[4].innerText === "O" &&  grid[7].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if (grid[2].innerText === "O"  &&  grid[5].innerText === "O" &&grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if (grid[0].innerText === "O" && grid[4].innerText === "O" &&  grid[8].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if (grid[2].innerText === "O" && grid[4].innerText === "O" &&grid[6].innerText === "O") {document.getElementById('result').innerText = 'Player 1 wins'}
+    else if  (grid[0].innerText === "X" &&grid[1].innerText === "X" && grid[2].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+    else if (grid[3].innerText === "X" && grid[4].innerText === "X" && grid[5].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+    else if (grid[6].innerText === "X" && grid[7].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+    else if (grid[0].innerText === "X" && grid[3].innerText === "X" && grid[6].innerText === "X"){ document.getElementById('result').innerText = 'Player 2 wins'}
+    else if (grid[1].innerText === "X" && grid[4].innerText === "X" && grid[7].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+    else if (grid[2].innerText === "X" && grid[5].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+    else if (grid[0].innerText === "X" && grid[4].innerText === "X" &&grid[8].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+    else if (grid[2].innerText === "X" && grid[4].innerText === "X" &&grid[6].innerText === "X") {document.getElementById('result').innerText = 'Player 2 wins'}
+    if (result.innerText ==='Player 2 wins' || result.innerText === 'Player 1 wins') {
+        for (let i = grid.length-1; i > 0; i--) 
+            grid[i].removeEventListener('click', gridClicked)
+            turnMessage.innerText =''
 }
 }
     
 
-    document.addEventListener('DOMContentLoaded', () => {
-        //create event listener that for grid clicks 
-    const gridElements = document.querySelectorAll('.grid').forEach(grid => grid.addEventListener('click', gridClicked, {once:true}))  
+document.addEventListener('DOMContentLoaded', () => {
+    //create event listener that for grid clicks 
+const gridElements = document.querySelectorAll('.grid').forEach(grid => grid.addEventListener('click', gridClicked, {once:true}))  
 })
-
 
 
 //need to create player variables

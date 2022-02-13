@@ -1,23 +1,23 @@
 body {
     background-color: salmon;
-    text-align: center;
 }
 
 
-/* need to create 3x3 board  */
 
 #container {
     width: 400px;
     height: 400px;
     display: grid;
     grid-template-columns: 150px 150px 150px;
-    
 }
 
 
 
 .grid {
     cursor: pointer;
-    border: 1px solid beige;
+ font-family:Arial, Helvetica, sans-serif;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
