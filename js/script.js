@@ -71,6 +71,7 @@ const checkWin = () => {
             for (let i = grid.length-1; i > 0; i--) 
                 grid[i].removeEventListener('click', gridClicked)
                 turnMessage.innerText =''
+                return
     }
     if(checkDraw()) {
         result.innerText = `It's a tie`
